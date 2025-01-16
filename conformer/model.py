@@ -103,6 +103,6 @@ class Conformer(nn.Module):
             * predictions (torch.FloatTensor): Result of model predictions.
         """
         encoder_outputs, encoder_output_lengths = self.encoder(inputs, input_lengths)
-        outputs = self.fc(encoder_outputs)
-        outputs = nn.functional.log_softmax(outputs, dim=-1)
-        return outputs, encoder_output_lengths
+        #outputs = self.fc(encoder_outputs)
+        #outputs = nn.functional.log_softmax(outputs, dim=-1)
+        return encoder_outputs, encoder_output_lengths
